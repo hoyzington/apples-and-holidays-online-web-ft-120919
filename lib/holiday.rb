@@ -48,6 +48,8 @@ def all_winter_holiday_supplies(holiday_hash)
   holiday_hash[:winter].values.flatten
 end
 
+holiday_hash = 
+
 def all_supplies_in_holidays(holiday_hash)
   # iterate through holiday_hash and print items such that your readout resembles:
   # Winter:
@@ -59,12 +61,16 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |season, hash_of_holidays|
     puts "#{season.capitalize}:"
     hash_of_holidays.each do |holiday, supplies_array|
+binding.pry
       formatted = holiday.to_s.gsub('_', ' ').split
+binding.pry
       ready_to_join = formatted.each {|word| word.capitalize}
+binding.pry
       puts "  #{ready_to_join.join(" ")}: #{supplies_array.join(", ")}"
     end
   end
 end
+
 
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
@@ -72,3 +78,4 @@ def all_holidays_with_bbq(holiday_hash)
 
 end
 
+all_supplies_in_holidays(holiday_hash)
