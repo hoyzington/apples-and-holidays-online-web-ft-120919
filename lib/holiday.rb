@@ -81,6 +81,7 @@ binding.pry
       ready_to_join = formatted.map {|word| word.capitalize}
 binding.pry
       puts "  #{ready_to_join.join(" ")}: #{supplies_array.join(", ")}"
+binding.pry
     end
   end
 end
