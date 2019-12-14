@@ -78,7 +78,7 @@ def all_supplies_in_holidays(holiday_hash)
 binding.pry
       formatted = holiday.to_s.gsub('_', ' ').split
 binding.pry
-      ready_to_join = formatted.each {|word| word.capitalize}
+      ready_to_join = formatted.map {|word| word.capitalize}
 binding.pry
       puts "  #{ready_to_join.join(" ")}: #{supplies_array.join(", ")}"
     end
