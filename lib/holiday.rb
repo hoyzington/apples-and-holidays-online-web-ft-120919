@@ -48,7 +48,7 @@ def all_winter_holiday_supplies(holiday_hash)
   holiday_hash[:winter].values.flatten
 end
 
-holiday_hash = {
+hash = {
       :winter => {
         :christmas => ["Lights", "Wreath"],
         :new_years => ["Party Hats"]
@@ -86,7 +86,13 @@ end
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
-
+  bbq_days = []
+  holiday_hash.each do |season, hash_of_holidays|
+    hash_of_holidays.each do |holiday, supplies_array|
+      if supplies_array.include?("BBQ")
+        bbq_days << holiday
+      end
+    end
+  end
 end
 
-all_supplies_in_holidays(holiday_hash)
